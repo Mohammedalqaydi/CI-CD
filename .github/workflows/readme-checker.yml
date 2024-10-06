@@ -17,7 +17,9 @@ jobs:
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
-          DEFAULT_BRANCH: "main" 
+
+
+          DEFAULT_BRANCH: "main"             # The default branch for comparison  
           VALIDATE_ALL_CODEBASE: "true"      # Ensures all files are linted
           VALIDATE_PYTHON: "true"            # Validate Python files in the repository
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token to allow linter access to the repository
