@@ -1,5 +1,6 @@
 name: testworkflow
 
+##### the trigger that the workflow activate for 
 on:
   pull_request:
     branches:
@@ -11,4 +12,3 @@ steps:
   - name: Checkout code
   ### here the step to bring code from the repository but what is @v2??
     uses: actions/checkout@v2
-    
