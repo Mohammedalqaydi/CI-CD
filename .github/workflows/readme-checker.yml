@@ -9,13 +9,13 @@ jobs:
   test_pull:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: lint for check the code 
-        uses: actions/checkout@v2
-        uses: github/super-linter@v4
+       uses: github/super-linter@v4
         
        env:
           
-          VALIDATE_ALL_CODEBASE: "true"
+          VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_PYTHON = "true"
-          DEFAULT_BRANCH: "main"
+          VALIDATE_PYTHON = true
+          DEFAULT_BRANCH: main
