@@ -1,0 +1,15 @@
+name: Readme checker
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test_pull:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      
+      run: echo "Hello, World!"
+      
