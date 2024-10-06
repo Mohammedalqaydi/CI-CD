@@ -1,0 +1,14 @@
+name: testworkflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  Test_pull:
+steps:
+  - name: Checkout code
+  ### here the step to bring code from the repository but what is @v2??
+    uses: actions/checkout@v2
+    
