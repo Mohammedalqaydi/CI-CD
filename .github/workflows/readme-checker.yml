@@ -1,9 +1,10 @@
 name: Readme checker
 
 on:
-  push:
+  pull_request:
     branches:
       - main
+
 jobs:
   test_pull:
     runs-on: ubuntu-latest
@@ -12,4 +13,4 @@ jobs:
         uses: actions/checkout@v2
       
       run: echo "Hello, World!"
-      
+
