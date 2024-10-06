@@ -1,21 +1,26 @@
- name: Readme checker
+name: Readme checker
 
+# Trigger the workflow for pull requests targeting main, successful, and failed branches.
 on:
   pull_request:
     branches:
       - main
+      - successful
+      - failed
 
 jobs:
-  test_pull:
+  lint_code:
     runs-on: ubuntu-latest
     steps:
+      # Step to checkout the code from the pull request
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Lint the code
+      # Step to run the Super-Linter
+      - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
-          VALIDATE_ALL_CODEBASE: "true"
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_PYTHON: "true"
-          DEFAULT_BRANCH: "main"
+          VALIDATE_ALL_CODEBASE: "true"      # Ensures all files are linted
+          VALIDATE_PYTHON: "true"            # Validate Python files in the repository
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token to allow linter access to the repository
+          DEFAULT_BRANCH: "main"             # The default branch for comparison
