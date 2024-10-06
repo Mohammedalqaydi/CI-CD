@@ -2,7 +2,7 @@ name: testworkflow
 
 ##### the trigger that the workflow activate for 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
@@ -16,4 +16,4 @@ steps:
 
 run: if [ ! -f README.md ]; then
    echo "File $FILE exists."
-   
+  
