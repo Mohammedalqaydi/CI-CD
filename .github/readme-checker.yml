@@ -7,8 +7,13 @@ on:
       - main
 
 jobs:
-  Test_pull:
+Test_pull:
+runs-on: ubuntu-latest
 steps:
   - name: Checkout code
   ### here the step to bring code from the repository but what is @v2??
     uses: actions/checkout@v2
+
+run: if [ ! -f README.md ]; then
+   echo "File $FILE exists."
+   
