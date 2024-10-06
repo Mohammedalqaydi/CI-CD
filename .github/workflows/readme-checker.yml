@@ -5,6 +5,7 @@ on:
   pull_request:
     branches:
       - main
+    
 
 jobs:
   lint_code:
@@ -23,3 +24,4 @@ jobs:
           VALIDATE_PYTHON: "true"            # Validate Python files in the repository
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Token to allow linter access to the repository
                      # The default branch for comparison
+
