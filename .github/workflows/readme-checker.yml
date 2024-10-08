@@ -14,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      # Step to run the Super-Linter
+     
       - name: Run Super-Linter
         uses: github/super-linter@v4
         env:
